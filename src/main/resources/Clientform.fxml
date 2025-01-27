@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.Controller.ClientController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="usernameField" promptText="Enter username" HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnConnect" text="Connect" onAction="#connectToServer"/>
+        <Button fx:id="btnDisconnect" text="Disconnect" onAction="#disconnect"/>
+    </HBox>
+
+    <ScrollPane VBox.vgrow="ALWAYS" fitToWidth="true" fitToHeight="true">
+        <VBox fx:id="messageContainer">
+            <TextArea fx:id="txtClientArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </ScrollPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="txtClientFiled" promptText="Type your message" HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnSendClient" text="Send" onAction="#sendClientSaveOnAction"/>
+        <Button fx:id="btnSendImage" text="Send Image" onAction="#sendImage"/>
+    </HBox>
+</VBox>
