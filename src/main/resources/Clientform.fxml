@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.Controller.ClientController">
+<VBox alignment="CENTER" prefHeight="456.0" prefWidth="554.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.Controller.ClientController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <HBox spacing="10" alignment="CENTER">
-        <TextField fx:id="usernameField" promptText="Enter username" HBox.hgrow="ALWAYS"/>
-        <Button fx:id="btnConnect" text="Connect" onAction="#connectToServer"/>
-        <Button fx:id="btnDisconnect" text="Disconnect" onAction="#disconnect"/>
-    </HBox>
+    <HBox alignment="CENTER" spacing="10" />
 
-    <ScrollPane VBox.vgrow="ALWAYS" fitToWidth="true" fitToHeight="true">
+    <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
         <VBox fx:id="messageContainer">
-            <TextArea fx:id="txtClientArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+            <TextArea fx:id="txtClientArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
         </VBox>
     </ScrollPane>
+     <TextField fx:id="usernameField" prefHeight="26.0" prefWidth="410.0" promptText="Enter username" />
+     <Button fx:id="btnConnect" onAction="#connectToServer" text="Connect" />
+     <Button fx:id="btnDisconnect" onAction="#disconnect" text="Disconnect" />
 
-    <HBox spacing="10" alignment="CENTER">
-        <TextField fx:id="txtClientFiled" promptText="Type your message" HBox.hgrow="ALWAYS"/>
-        <Button fx:id="btnSendClient" text="Send" onAction="#sendClientSaveOnAction"/>
-        <Button fx:id="btnSendImage" text="Send Image" onAction="#sendImage"/>
+    <HBox alignment="CENTER" spacing="10">
+        <TextField fx:id="txtClientFiled" promptText="Type your message" HBox.hgrow="ALWAYS" />
     </HBox>
+     <Button fx:id="btnSendClient" onAction="#sendClientSaveOnAction" text="Send" />
+     <Button fx:id="btnSendImage" onAction="#sendImage" text="Send Image" />
 </VBox>
